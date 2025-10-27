@@ -56,7 +56,6 @@ export interface TelegramUploadResult {
 export interface PersistableTelegramInfo {
   tgMessageId: number | null;
   tgFileId: string | null;
-  tgFilePath: string | null;
   tgEndpoint: EndpointResolution['endpoint'] | null;
   tgFieldName: TelegramFileKind | null;
   tgFileName: string | null;

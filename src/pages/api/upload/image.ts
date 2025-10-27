@@ -189,7 +189,6 @@ export default async function handler(
         await db.updateImageTelegramInfo(imageId, {
           tgMessageId: tgRes.messageId ?? null,
           tgFileId: tgRes.file?.file_id ?? null,
-          tgFilePath: tgRes.filePath ?? null,
           tgEndpoint: tgRes.endpoint ?? null,
           tgFieldName: tgRes.fieldName ?? null,
           tgFileName: tgRes.file?.file_name ?? null,
@@ -282,7 +281,6 @@ export default async function handler(
           await db.updateImageTelegramInfo(imageId, {
             tgMessageId: tgRes.messageId ?? null,
             tgFileId: tgRes.file?.file_id ?? null,
-            tgFilePath: tgRes.filePath ?? null,
             tgEndpoint: tgRes.endpoint ?? null,
             tgFieldName: tgRes.fieldName ?? null,
             tgFileName: tgRes.file?.file_name ?? null,

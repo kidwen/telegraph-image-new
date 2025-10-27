@@ -23,21 +23,15 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     const db = await createD1Connection();
     const rec = await db.getImageByTelegramFileId(fileId);
     imageRecord = rec; // 保存完整记录
-    if (rec?.tgFilePath) {
-      filePath = rec.tgFilePath;
-    } else {
-      const fetched = await getTelegramFilePath(fileId);
-      filePath = fetched;
-      if (rec && fetched) {
-        imageIdToUpdate = rec.id || null;
-      }
+    const fetched = await getTelegramFilePath(fileId);
+    filePath = fetched;
+    if (rec && fetched) {
+      imageIdToUpdate = rec.id || null;
     }
 
-    // 异步落地 tgFilePath（最佳努力，不影响响应）
     if (imageIdToUpdate && filePath) {
       db.updateImageTelegramInfo(imageIdToUpdate, {
         tgFileId: fileId,
-        tgFilePath: filePath,
       }).catch(() => void 0);
     }
   } catch {

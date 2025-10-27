@@ -204,14 +204,13 @@ export class D1ImageDB {
   // 直接在 img 表上更新 Telegram 字段
   async updateImageTelegramInfo(
     id: number,
-    info: Partial<Pick<ImageRecord, 'tgMessageId' | 'tgFileId' | 'tgFilePath' | 'tgEndpoint' | 'tgFieldName' | 'tgFileName'>>
+    info: Partial<Pick<ImageRecord, 'tgMessageId' | 'tgFileId' | 'tgEndpoint' | 'tgFieldName' | 'tgFileName'>>
   ): Promise<void> {
     const fields: string[] = [];
     const values: unknown[] = [];
 
     if (info.tgMessageId !== undefined) { fields.push('tgMessageId = ?'); values.push(info.tgMessageId); }
     if (info.tgFileId !== undefined) { fields.push('tgFileId = ?'); values.push(info.tgFileId); }
-    if (info.tgFilePath !== undefined) { fields.push('tgFilePath = ?'); values.push(info.tgFilePath); }
     if (info.tgEndpoint !== undefined) { fields.push('tgEndpoint = ?'); values.push(info.tgEndpoint); }
     if (info.tgFieldName !== undefined) { fields.push('tgFieldName = ?'); values.push(info.tgFieldName); }
     if (info.tgFileName !== undefined) { fields.push('tgFileName = ?'); values.push(info.tgFileName); }

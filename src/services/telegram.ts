@@ -91,7 +91,6 @@ export async function uploadFileToTelegram(
     persistable: {
       tgMessageId: typeof data?.result?.message_id === 'number' ? data.result.message_id : null,
       tgFileId: fileInfo?.file_id || null,
-      tgFilePath: filePath || null,
       tgEndpoint: endpoint || null,
       tgFieldName: fieldName || null,
       tgFileName: fileInfo?.file_name || null,

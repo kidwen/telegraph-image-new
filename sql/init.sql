@@ -19,7 +19,6 @@ CREATE TABLE IF NOT EXISTS img (
     -- Telegram 相关字段
     tgMessageId INTEGER,                   -- Telegram 消息ID
     tgFileId TEXT,                         -- Telegram 文件ID（可用于 getFile）
-    tgFilePath TEXT,                       -- Telegram 文件路径（getFile 返回）
     tgEndpoint TEXT,                       -- 使用的发送接口（sendPhoto/sendDocument/...）
     tgFieldName TEXT,                      -- 字段名（photo/video/audio/document）
     tgFileName TEXT                        -- Telegram 返回的文件名（如有）

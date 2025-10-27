@@ -31,7 +31,6 @@ export interface ImageRecord {
   // Telegram fields in img table
   tgMessageId?: number | null;
   tgFileId?: string | null;
-  tgFilePath?: string | null;
   tgEndpoint?: string | null;
   tgFieldName?: string | null;
   tgFileName?: string | null;
